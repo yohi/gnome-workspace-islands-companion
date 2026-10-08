@@ -4,9 +4,10 @@ import Meta from 'gi://Meta';
 import Shell from 'gi://Shell';
 
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
+import {ExtensionState} from 'resource:///org/gnome/shell/misc/extensionUtils.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
-import {desiredIslandsEnabled, workspaceTarget} from './policy.js';
+import {desiredIslandsEnabled, isExtensionActive, workspaceTarget} from './policy.js';
 
 const ISLANDS_UUID = 'workspace-islands@danielbernalo.github.io';
 const MUTTER_SCHEMA = 'org.gnome.mutter';
@@ -141,7 +142,14 @@ export default class WorkspaceIslandsCompanion extends Extension {
         }
 
         if (target === 'secondary') {
-            const islands = Main.extensionManager.lookup(ISLANDS_UUID)?.stateObj;
+            const upstream = Main.extensionManager.lookup(ISLANDS_UUID);
+            if (!isExtensionActive(upstream, ExtensionState.ACTIVE)) {
+                console.warn('workspace-islands-companion: Islands not active; ' +
+                    'secondary workspace switch skipped');
+                return;
+            }
+
+            const islands = upstream.stateObj;
             if (typeof islands?._switchRelative !== 'function' || !islands._registry) {
                 console.warn('workspace-islands-companion: Islands not active; ' +
                     'secondary workspace switch skipped');

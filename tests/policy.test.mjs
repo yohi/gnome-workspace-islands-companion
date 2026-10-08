@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
-import {desiredIslandsEnabled, workspaceTarget} from '../src/policy.js';
+import {desiredIslandsEnabled, isExtensionActive, workspaceTarget} from '../src/policy.js';
 
 test('one monitor disables, multiple enables', () => {
     assert.equal(desiredIslandsEnabled(1), false);
@@ -33,4 +33,10 @@ test('invalid focus or layout safely declines dispatch', () => {
 test('non-zero primary index is respected', () => {
     assert.equal(workspaceTarget(0, 1, 1, 2), 'secondary');
     assert.equal(workspaceTarget(1, 0, 1, 2), 'primary');
+});
+
+test('only active extensions are eligible for switching', () => {
+    assert.equal(isExtensionActive({state: 1}, 1), true);
+    assert.equal(isExtensionActive({state: 2}, 1), false);
+    assert.equal(isExtensionActive(null, 1), false);
 });

@@ -6,7 +6,7 @@ Experimental GNOME Shell **50** extension that complements [Workspace Islands](h
 
 - **Monitor-aware lifecycle**: enable Workspace Islands on 2+ active monitors; disable it on a single active monitor.
 - **Unified keyboard shortcuts**: Super+Alt+Left/Right switches only the focused monitor. Primary uses native GNOME workspace switching; secondary delegates to Workspace Islands. Pointer location is the fallback if no window has focus.
-- **Debounced monitoring**: wait for 650ms of layout stability before changing enablement.
+- **Debounced monitoring**: wait for 650 ms of layout stability before changing enablement.
 
 > **Experimental.** GNOME Shell 50 / Wayland hotplug behavior is **not yet verified on real hardware**. This cannot guarantee disabling Islands before Mutter has moved windows, so it is **not** a proven fix for missing windows on monitor disconnect.
 

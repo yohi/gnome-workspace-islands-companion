@@ -12,6 +12,10 @@ export function desiredIslandsEnabled(monitorCount) {
     return monitorCount > 1;
 }
 
+export function isExtensionActive(extension, activeState) {
+    return extension?.state === activeState;
+}
+
 /**
  * Prefer the focused window over pointer position, matching Workspace Islands.
  * A missing or invalid target is never silently treated as the primary.
