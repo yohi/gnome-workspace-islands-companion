@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.workspace-islands-companion"
+          path="/org/gnome/shell/extensions/workspace-islands-companion/">
+    <key name="auto-manage" type="b">
+      <default>true</default>
+      <summary>Automatically toggle Workspace Islands based on monitor count</summary>
+    </key>
+    <key name="switch-next" type="as">
+      <default><![CDATA[['<Super><Alt>Right']]]></default>
+      <summary>Next workspace on the focused monitor</summary>
+    </key>
+    <key name="switch-prev" type="as">
+      <default><![CDATA[['<Super><Alt>Left']]]></default>
+      <summary>Previous workspace on the focused monitor</summary>
+    </key>
+  </schema>
+</schemalist>
