@@ -1,0 +1,10 @@
+{
+  "name": "gnome-workspace-islands-companion",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check:syntax": "node --check src/extension.js && node --check src/policy.js"
+  }
+}

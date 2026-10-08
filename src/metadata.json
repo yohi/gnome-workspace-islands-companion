@@ -1,0 +1,9 @@
+{
+  "uuid": "workspace-islands-companion@yohi.github.com",
+  "name": "Workspace Islands Companion",
+  "description": "Automatically manage Workspace Islands when monitors connect or disconnect, and unify per-monitor workspace shortcuts.",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.workspace-islands-companion",
+  "url": "https://github.com/yohi/gnome-workspace-islands-companion",
+  "version": 1
+}
