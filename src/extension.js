@@ -59,7 +59,7 @@ export default class WorkspaceIslandsCompanion extends Extension {
     }
 
     _registerKeybindings() {
-        for (const [name, delta] of [['switch-next', 1], ['switch-prev', -1]]) {
+        for (const [name, delta] of [['companion-switch-next', 1], ['companion-switch-prev', -1]]) {
             const action = Main.wm.addKeybinding(
                 name, this._settings, Meta.KeyBindingFlags.NONE,
                 Shell.ActionMode.NORMAL, () => this._switch(delta));

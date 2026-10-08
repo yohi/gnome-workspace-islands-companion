@@ -65,8 +65,8 @@ gsettings set org.gnome.shell.extensions.workspace-islands-companion auto-manage
 gsettings set org.gnome.shell.extensions.workspace-islands-companion auto-manage true
 
 # Clear companion shortcuts for troubleshooting:
-gsettings set org.gnome.shell.extensions.workspace-islands-companion switch-next '[]'
-gsettings set org.gnome.shell.extensions.workspace-islands-companion switch-prev '[]'
+gsettings set org.gnome.shell.extensions.workspace-islands-companion companion-switch-next '[]'
+gsettings set org.gnome.shell.extensions.workspace-islands-companion companion-switch-prev '[]'
 ```
 
 Changing shortcut settings may require disabling and re-enabling the companion.
